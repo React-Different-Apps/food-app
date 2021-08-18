@@ -8,18 +8,18 @@ const CartModal = (props) => {
 
     const cartContext=useContext(CartContext)
     const totalAmount=`{$${cartContext.totalAmount.toFixed(2)}}`
+   
     const hasItems=cartContext.items.length > 0
 
-    const addItemHandler = (item)=>{}
-    const removeItemHandler=(id)=>{}
+   
+    
      const cartItems=cartContext.items.map((item) => (
          <li><CartItem 
          key={item.id}
          name={item.name} 
          amount={item.amount} 
-         price={item.price}
-         onAdd={addItemHandler}
-         onRemove={removeItemHandler}/></li>
+         price={item.price}/></li>
+        
      ))
     return (
         <Modal onClose={props.onHideCart}>
